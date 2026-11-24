@@ -3,27 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
   <title>GAUTAM JHA — NIFTY • BANKNIFTY • OPTIONS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code (Initialized ONLY for Verified Real Human Browsers) -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1167263652305500');
-    fbq('track', 'PageView');
+    window.__PIXEL_ID = '1167263652305500';
+    window.__isBotTraffic = (function () {
+      try {
+        var ua = navigator.userAgent || '';
+        if (navigator.webdriver) return true;
+        if (window._phantom || window.__nightmare || window.callPhantom || window.__selenium_unwrapped || window.__fxdriver_unwrapped) return true;
+        if (document.documentElement.getAttribute('webdriver') || document.documentElement.getAttribute('selenium') || document.documentElement.getAttribute('driver')) return true;
+        if (!navigator.languages || navigator.languages.length === 0) return true;
+        if (/HeadlessChrome|PhantomJS|Puppeteer|Playwright|Selenium|Crawl|Spider|Bot|FacebookExternalHit|Facebot|WhatsApp|TelegramBot|Lighthouse|GTmetrix/i.test(ua)) return true;
+        if (window.outerWidth === 0 && window.outerHeight === 0) return true;
+        return false;
+      } catch (e) {
+        return true;
+      }
+    })();
+
+    if (!window.__isBotTraffic) {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', window.__PIXEL_ID);
+      fbq('track', 'PageView');
+    }
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1167263652305500&ev=PageView&noscript=1" />
-  </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
@@ -43,14 +59,50 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Animated Ambient Background Glow */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      filter: blur(95px);
+      opacity: 0.16;
+      pointer-events: none;
+      z-index: 0;
+      animation: bgFloat 8s ease-in-out infinite alternate;
+    }
+
+    body::before {
+      background: #18c958;
+      top: -60px;
+      left: -60px;
+    }
+
+    body::after {
+      background: #ffcc00;
+      bottom: -60px;
+      right: -60px;
+      animation-delay: 2s;
+    }
+
+    @keyframes bgFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(25px, 20px) scale(1.12); }
     }
 
     .page-wrapper {
+      position: relative;
+      z-index: 1;
       width: 100%;
       max-width: 440px;
       min-height: 100vh;
-      background-color: #161d2f;
-      padding: 36px 22px 28px;
+      background-color: rgba(22, 29, 47, 0.92);
+      padding: 34px 22px 28px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -58,8 +110,36 @@
       text-align: center;
     }
 
-    /* Profile Logo */
+    /* Step-by-Step Entrance Animations */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .anim-step {
+      opacity: 0;
+      animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.18s; }
+    .delay-3 { animation-delay: 0.26s; }
+    .delay-4 { animation-delay: 0.34s; }
+    .delay-5 { animation-delay: 0.42s; }
+    .delay-6 { animation-delay: 0.52s; }
+    .delay-7 { animation-delay: 0.62s; }
+    .delay-8 { animation-delay: 0.72s; }
+    .delay-9 { animation-delay: 0.80s; }
+
+    /* Animated Profile Logo with Gold Pulse Ring */
     .logo-wrap {
+      position: relative;
       width: 112px;
       height: 112px;
       border-radius: 50%;
@@ -67,8 +147,20 @@
       overflow: hidden;
       margin-bottom: 22px;
       background-color: #0e131f;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
       flex-shrink: 0;
+      animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+                 logoGlow 2.8s ease-in-out infinite;
+    }
+
+    @keyframes logoGlow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(230, 184, 0, 0.45), 0 6px 18px rgba(0, 0, 0, 0.4);
+        transform: translateY(0);
+      }
+      50% {
+        box-shadow: 0 0 0 8px rgba(230, 184, 0, 0), 0 10px 24px rgba(0, 0, 0, 0.45);
+        transform: translateY(-3px);
+      }
     }
 
     .logo-wrap img {
@@ -87,6 +179,7 @@
       text-transform: uppercase;
       line-height: 1.2;
       margin-bottom: 12px;
+      text-shadow: 0 2px 12px rgba(255, 204, 0, 0.22);
     }
 
     .brand-category {
@@ -106,8 +199,10 @@
       margin-bottom: 22px;
     }
 
-    /* Green CTA Button */
+    /* Animated Green CTA Button with Shine & Pulse */
     .cta-btn {
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -123,7 +218,43 @@
       border-radius: 10px;
       border: none;
       cursor: pointer;
+      user-select: none;
+      box-shadow: 0 6px 20px rgba(24, 201, 88, 0.32);
       transition: transform 0.15s ease, background-color 0.15s ease;
+      animation: btnPulse 2.4s ease-in-out infinite;
+    }
+
+    .cta-btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: skewX(-22deg);
+      animation: btnShimmer 3.2s infinite;
+    }
+
+    @keyframes btnShimmer {
+      0% { left: -120%; }
+      45%, 100% { left: 160%; }
+    }
+
+    @keyframes btnPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 20px rgba(24, 201, 88, 0.32);
+      }
+      50% {
+        transform: scale(1.018);
+        box-shadow: 0 8px 26px rgba(24, 201, 88, 0.48);
+      }
     }
 
     .cta-btn:hover {
@@ -131,13 +262,19 @@
     }
 
     .cta-btn:active {
-      transform: scale(0.985);
+      transform: scale(0.98);
+    }
+
+    .cta-btn.verifying {
+      background-color: #129c44;
+      pointer-events: none;
     }
 
     /* Dark Teal Trust Box */
     .trust-box {
       width: 100%;
       background-color: #0f363c;
+      border: 1px solid rgba(24, 201, 88, 0.22);
       border-radius: 10px;
       padding: 16px 18px;
       margin-top: 16px;
@@ -198,6 +335,12 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
+      animation: urgencyBlink 2.2s ease-in-out infinite;
+    }
+
+    @keyframes urgencyBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.72; }
     }
 
     .seats-line {
@@ -222,9 +365,114 @@
       gap: 5px;
     }
 
-    /* Honeypot trap hidden from real users */
+    /* Meta Disclaimer & Policy Links Footer */
+    .meta-disclaimer-box {
+      width: 100%;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .meta-disclaimer-text {
+      font-size: 11px;
+      line-height: 1.5;
+      color: #7d889b;
+      margin-bottom: 10px;
+    }
+
+    .policy-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .policy-links button {
+      background: none;
+      border: none;
+      color: #9ba6b8;
+      font-size: 11.5px;
+      font-weight: 500;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 2px 4px;
+    }
+
+    .policy-links button:hover {
+      color: #ffffff;
+    }
+
+    /* Compliance Modal Popup */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 12, 22, 0.82);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 9999;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      width: 100%;
+      max-width: 400px;
+      background: #1c253b;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+      color: #e2e8f0;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      animation: fadeSlideUp 0.25s ease-out forwards;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-header h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffcc00;
+    }
+
+    .modal-close {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #ffffff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-body {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #cbd5e1;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    /* Honeypot traps hidden from real users */
     .hp-trap {
-      position: absolute;
+      position: fixed;
       left: -9999px;
       top: -9999px;
       width: 1px;
@@ -236,8 +484,9 @@
 </head>
 <body>
 
-  <!-- Invisible Bot Honeypot Trap -->
-  <a href="#verify-session" id="botTrapLink" class="hp-trap" tabindex="-1" aria-hidden="true">Join Channel</a>
+  <!-- Invisible Bot Honeypot Traps -->
+  <a href="https://telegram.org" id="botTrap1" class="hp-trap" tabindex="-1" aria-hidden="true">Join Free Telegram</a>
+  <button type="button" id="botTrap2" class="hp-trap" tabindex="-1" aria-hidden="true">JOIN NOW</button>
 
   <main class="page-wrapper">
     <!-- Circular Profile Image -->
@@ -246,23 +495,25 @@
     </div>
 
     <!-- Heading & Taglines -->
-    <h1 class="brand-title">GAUTAM JHA</h1>
-    <div class="brand-category">NIFTY &bull; BANKNIFTY &bull; OPTIONS</div>
-    <p class="brand-subtitle">Daily Intraday Trading Signals &amp; Analysis</p>
+    <h1 class="brand-title anim-step delay-1">GAUTAM JHA</h1>
+    <div class="brand-category anim-step delay-2">NIFTY &bull; BANKNIFTY &bull; OPTIONS</div>
+    <p class="brand-subtitle anim-step delay-3">Daily Intraday Trading Signals &amp; Analysis</p>
 
-    <!-- Primary CTA Button (Link decoded only on real human click) -->
-    <button type="button" class="cta-btn telegram-cta">
-      JOIN NOW FOR FREE TELEGRAM
-    </button>
+    <!-- Primary CTA Button -->
+    <div class="anim-step delay-4" style="width: 100%;">
+      <button type="button" class="cta-btn telegram-cta" data-slot="top">
+        JOIN NOW FOR FREE TELEGRAM
+      </button>
+    </div>
 
     <!-- Trust Highlight Card -->
-    <div class="trust-box">
+    <div class="trust-box anim-step delay-5">
       <div class="trust-line"><span>&#10004;</span> Trusted by 5,000+ Traders</div>
       <div class="trust-line"><span>&#10004;</span> Daily Consistent Setups</div>
     </div>
 
     <!-- Feature Checklist -->
-    <ul class="features-list">
+    <ul class="features-list anim-step delay-6">
       <li><span class="check-icon">&#10004;</span> 5–7 High Probability Trades</li>
       <li><span class="check-icon">&#10004;</span> Exact Entry, SL &amp; Target</li>
       <li><span class="check-icon">&#10004;</span> Beginner Friendly Guidance</li>
@@ -270,97 +521,256 @@
     </ul>
 
     <!-- Secondary CTA Button -->
-    <button type="button" class="cta-btn telegram-cta">
-      JOIN NOW FOR FREE TELEGRAM
-    </button>
+    <div class="anim-step delay-7" style="width: 100%;">
+      <button type="button" class="cta-btn telegram-cta" data-slot="bottom">
+        JOIN NOW FOR FREE TELEGRAM
+      </button>
+    </div>
 
     <!-- Urgency & Disclaimer -->
-    <div class="urgency-line">
+    <div class="urgency-line anim-step delay-8">
       <span>&#8987;</span> Free Access Closing Soon
     </div>
 
-    <div class="seats-line">
+    <div class="seats-line anim-step delay-8">
       <span>&#128200;</span> Limited Seats &bull; Active Community
     </div>
 
-    <div class="risk-line">
+    <div class="risk-line anim-step delay-9">
       <span>&#9888;</span> Market investments are subject to risk
     </div>
+
+    <!-- Meta Ads Compliance Disclaimer & Popups -->
+    <footer class="meta-disclaimer-box anim-step delay-9">
+      <p class="meta-disclaimer-text">
+        <strong>Disclaimer:</strong> This site is not a part of the Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook™ or Meta in any way. FACEBOOK™ is a trademark of Meta Platforms, Inc. All content shared is strictly for educational and informational purposes only and does not constitute SEBI-registered investment or financial advice.
+      </p>
+      <div class="policy-links">
+        <button type="button" data-modal="disclaimer">Disclaimer</button>
+        <button type="button" data-modal="privacy">Privacy Policy</button>
+        <button type="button" data-modal="terms">Terms &amp; Conditions</button>
+      </div>
+    </footer>
   </main>
+
+  <!-- Compliance Popup Modal -->
+  <div class="modal-overlay" id="policyModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Disclaimer</h3>
+        <button type="button" class="modal-close" id="closeModalBtn">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
 
   <script>
     (function () {
       var pageLoadedAt = Date.now();
-      var humanInteracted = false;
-      var botFlagged = false;
+      var botFlagged = Boolean(window.__isBotTraffic);
       var leadFired = false;
 
-      // Encoded Telegram Invite Link (Prevents raw scraper/crawler extraction)
-      var encodedInvite = "aHR0cHM6Ly90Lm1lLytXeUNyTEZ4SnR4UXhNV0Zs";
+      // Human Behavioral Telemetry Counters
+      var gestureCount = 0;
+      var pointerDownRecorded = false;
+      var lastPointerX = 0;
+      var lastPointerY = 0;
+      var scrollEvents = 0;
+      var clickTimestamps = [];
 
-      // 1. Headless Browser & Automation Detection
-      function isAutomatedBrowser() {
-        if (navigator.webdriver) return true;
-        if (window._phantom || window.__nightmare || window.callPhantom) return true;
-        if (document.documentElement.getAttribute("webdriver")) return true;
-        if (!navigator.languages || navigator.languages.length === 0) return true;
-        if (/HeadlessChrome|PhantomJS|Puppeteer|Playwright|Selenium/i.test(navigator.userAgent)) return true;
+      // Split & XOR-Obfuscated Telegram Invite Link (https://t.me/+WyCrLFxJtxQxMWFl)
+      var _k = 73;
+      var _p1 = [33, 61, 61, 57, 58, 115, 102, 102, 61, 103, 36, 44, 102, 98];
+      var _p2 = [30, 48, 10, 59, 5, 15, 49, 3, 61, 49, 24, 60, 4, 30, 15, 37];
+
+      function buildInviteUrl() {
+        var combined = _p1.concat(_p2);
+        var out = "";
+        for (var i = 0; i < combined.length; i++) {
+          out += String.fromCharCode(combined[i] ^ _k);
+        }
+        return out;
+      }
+
+      // 1. Advanced Bot, Emulator, Headless & Datacenter Environment Check
+      function runDeepEnvironmentAudit() {
+        if (botFlagged) return true;
+
+        try {
+          if (navigator.webdriver) return true;
+          if (window.outerWidth === 0 || window.outerHeight === 0) return true;
+          if (screen.width < 200 || screen.height < 200) return true;
+          if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 1) return true;
+          if (document.visibilityState === "prerender") return true;
+
+          // Canvas Fingerprint Support Check (Headless bots often fail or return blank)
+          var canvas = document.createElement("canvas");
+          var ctx = canvas.getContext && canvas.getContext("2d");
+          if (!ctx) return true;
+        } catch (err) {
+          return true;
+        }
+
         return false;
       }
 
-      if (isAutomatedBrowser()) {
+      if (runDeepEnvironmentAudit()) {
         botFlagged = true;
       }
 
-      // 2. Invisible Honeypot Trap for Crawlers
-      var trap = document.getElementById("botTrapLink");
-      if (trap) {
-        trap.addEventListener("click", function (e) {
-          e.preventDefault();
-          botFlagged = true;
-        });
-      }
-
-      // 3. Real Human Interaction Signals (Touch, Scroll, Pointer, Mouse, Key)
-      function markHumanActivity(e) {
-        if (e && e.isTrusted) {
-          humanInteracted = true;
+      // 2. Honeypot Traps (Auto-ban any script that clicks hidden elements)
+      ["botTrap1", "botTrap2"].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.addEventListener("click", function (e) {
+            e.preventDefault();
+            botFlagged = true;
+          });
         }
-      }
-
-      ["touchstart", "pointerdown", "mousemove", "scroll", "keydown"].forEach(function (evt) {
-        window.addEventListener(evt, markHumanActivity, { passive: true });
       });
 
-      // 4. Verified Real-User Click Handler
+      // 3. Track Real Physical Touch / Pointer / Scroll Telemetry
+      window.addEventListener("pointerdown", function (e) {
+        if (!e.isTrusted) return;
+        pointerDownRecorded = true;
+        lastPointerX = e.clientX || 0;
+        lastPointerY = e.clientY || 0;
+        gestureCount++;
+      }, { passive: true });
+
+      window.addEventListener("touchstart", function (e) {
+        if (!e.isTrusted) return;
+        pointerDownRecorded = true;
+        if (e.touches && e.touches[0]) {
+          lastPointerX = e.touches[0].clientX;
+          lastPointerY = e.touches[0].clientY;
+        }
+        gestureCount++;
+      }, { passive: true });
+
+      window.addEventListener("mousemove", function (e) {
+        if (!e.isTrusted) return;
+        if (Math.abs(e.clientX - lastPointerX) > 3 || Math.abs(e.clientY - lastPointerY) > 3) {
+          lastPointerX = e.clientX;
+          lastPointerY = e.clientY;
+          gestureCount++;
+        }
+      }, { passive: true });
+
+      window.addEventListener("scroll", function (e) {
+        if (e.isTrusted) {
+          scrollEvents++;
+          gestureCount++;
+        }
+      }, { passive: true });
+
+      // 4. Strict Multi-Layer Real-Human Verification Before Meta Lead & Telegram Redirect
       document.querySelectorAll(".telegram-cta").forEach(function (btn) {
         btn.addEventListener("click", function (e) {
           e.preventDefault();
 
-          var timeSpentMs = Date.now() - pageLoadedAt;
-          var hasPointerCoords = (e.clientX > 0 || e.clientY > 0) || (e.detail && e.detail > 0);
+          var now = Date.now();
+          var dwellTime = now - pageLoadedAt;
 
-          // Block bots, scrapers, headless browsers, and instant automated clicks (< 1.2s)
+          // Record click rate (detect rapid click farms / auto-clickers)
+          clickTimestamps.push(now);
+          if (clickTimestamps.length > 3) {
+            var span = clickTimestamps[clickTimestamps.length - 1] - clickTimestamps[0];
+            if (span < 1500) {
+              botFlagged = true;
+              return;
+            }
+          }
+
+          // Verify click coordinates fall inside actual rendered button bounding box
+          var rect = btn.getBoundingClientRect();
+          var hasRealCoords = (e.clientX > 0 || e.clientY > 0);
+          var insideButton =
+            e.clientX >= rect.left - 2 &&
+            e.clientX <= rect.right + 2 &&
+            e.clientY >= rect.top - 2 &&
+            e.clientY <= rect.bottom + 2;
+
+          // Strict Gate: Reject bots, fake clicks, zero-coordinate synthetic clicks, and < 1.8s instant clicks
           if (
             botFlagged ||
-            isAutomatedBrowser() ||
+            runDeepEnvironmentAudit() ||
             !e.isTrusted ||
-            (!humanInteracted && !hasPointerCoords) ||
-            timeSpentMs < 1200
+            !pointerDownRecorded ||
+            !hasRealCoords ||
+            !insideButton ||
+            gestureCount < 1 ||
+            dwellTime < 1800
           ) {
             return;
           }
 
-          // Fire Meta Pixel 'Lead' event ONLY for verified real human users (once per session)
+          // Visual feedback for real user
+          var originalText = btn.textContent;
+          btn.classList.add("verifying");
+          btn.textContent = "OPENING TELEGRAM...";
+
+          // Fire Meta Pixel 'Lead' ONLY ONCE per verified real human session
           if (!leadFired && typeof fbq === "function") {
             leadFired = true;
-            fbq("track", "Lead");
+            fbq("track", "Lead", {
+              content_name: "Gautam Jha Telegram",
+              button_slot: btn.getAttribute("data-slot") || "cta"
+            });
           }
 
-          // Decode and open Telegram invite link for real user
-          var targetUrl = atob(encodedInvite);
-          window.open(targetUrl, "_blank", "noopener,noreferrer");
+          // Assemble link dynamically & redirect real user
+          var inviteUrl = buildInviteUrl();
+          setTimeout(function () {
+            window.location.href = inviteUrl;
+            setTimeout(function () {
+              btn.classList.remove("verifying");
+              btn.textContent = originalText;
+            }, 1500);
+          }, 220);
         });
+      });
+
+      // 5. Compliance Modal Content
+      var policies = {
+        disclaimer: {
+          title: "Educational & Meta Disclaimer",
+          text: "We are not SEBI-registered investment advisors. All market analysis, chart setups, and educational updates shared inside our Telegram community are purely for learning and informational purposes. Trading in Nifty, BankNifty, and Options involves substantial financial risk. Please consult a certified financial advisor before making any investment decisions. This website is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. or Facebook™."
+        },
+        privacy: {
+          title: "Privacy Policy",
+          text: "We respect your privacy. Basic analytical data (such as page visits and verified button interactions via Meta Pixel) may be processed solely to measure campaign performance and improve user experience. We do not sell, rent, or distribute your personal information to third parties."
+        },
+        terms: {
+          title: "Terms & Conditions",
+          text: "By accessing this page and joining our community, you acknowledge that all trading decisions are taken solely at your own risk and discretion. Past market observations or educational examples do not guarantee future results."
+        }
+      };
+
+      var modal = document.getElementById("policyModal");
+      var modalTitle = document.getElementById("modalTitle");
+      var modalBody = document.getElementById("modalBody");
+      var closeModalBtn = document.getElementById("closeModalBtn");
+
+      document.querySelectorAll(".policy-links button").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var key = btn.getAttribute("data-modal");
+          if (policies[key]) {
+            modalTitle.textContent = policies[key].title;
+            modalBody.textContent = policies[key].text;
+            modal.classList.add("active");
+          }
+        });
+      });
+
+      closeModalBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
+
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
       });
     })();
   </script>
