@@ -491,7 +491,7 @@
   <main class="page-wrapper">
     <!-- Circular Profile Image -->
     <div class="logo-wrap">
-      <img src="Gautam.jpg" alt="Gautam Jha Stock Learners" />
+      <img src="https://i.ibb.co/gautam-jha-stock-learners.jpg" alt="Gautam Jha Stock Learners" />
     </div>
 
     <!-- Heading & Taglines -->
@@ -501,9 +501,9 @@
 
     <!-- Primary CTA Button -->
     <div class="anim-step delay-4" style="width: 100%;">
-      <button type="button" class="cta-btn telegram-cta" data-slot="top">
+      <a href="#join" data-invite="https://t.me/+WyCrLFxJtxQxMWFl" class="cta-btn telegram-cta" data-slot="top">
         JOIN NOW FOR FREE TELEGRAM
-      </button>
+      </a>
     </div>
 
     <!-- Trust Highlight Card -->
@@ -522,9 +522,9 @@
 
     <!-- Secondary CTA Button -->
     <div class="anim-step delay-7" style="width: 100%;">
-      <button type="button" class="cta-btn telegram-cta" data-slot="bottom">
+      <a href="#join" data-invite="https://t.me/+WyCrLFxJtxQxMWFl" class="cta-btn telegram-cta" data-slot="bottom">
         JOIN NOW FOR FREE TELEGRAM
-      </button>
+      </a>
     </div>
 
     <!-- Urgency & Disclaimer -->
@@ -576,20 +576,6 @@
       var lastPointerX = 0;
       var lastPointerY = 0;
       var clickTimestamps = [];
-
-      // Exclusive Destination Link: https://t.me/+WyCrLFxJtxQxMWFl (XOR-protected)
-      var _k = 73;
-      var _p1 = [33, 61, 61, 57, 58, 115, 102, 102, 61, 103, 36, 44, 102, 98];
-      var _p2 = [30, 48, 10, 59, 5, 15, 49, 3, 61, 49, 24, 60, 4, 30, 15, 37];
-
-      function getTargetInvite() {
-        var combined = _p1.concat(_p2);
-        var url = "";
-        for (var i = 0; i < combined.length; i++) {
-          url += String.fromCharCode(combined[i] ^ _k);
-        }
-        return url;
-      }
 
       // 1. Deep Environment & Headless Bot Audit
       function runDeepEnvironmentAudit() {
@@ -711,7 +697,7 @@
             });
           }
 
-          var inviteUrl = getTargetInvite();
+          var inviteUrl = btn.getAttribute("data-invite") || "https://t.me/+WyCrLFxJtxQxMWFl";
           setTimeout(function () {
             window.location.href = inviteUrl;
             setTimeout(function () {
