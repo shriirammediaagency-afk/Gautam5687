@@ -485,7 +485,7 @@
 <body>
 
   <!-- Invisible Bot Honeypot Traps -->
-  <a href="https://telegram.org" id="botTrap1" class="hp-trap" tabindex="-1" aria-hidden="true">Join Free Telegram</a>
+  <a href="#blocked" id="botTrap1" class="hp-trap" tabindex="-1" aria-hidden="true">Join Free Telegram</a>
   <button type="button" id="botTrap2" class="hp-trap" tabindex="-1" aria-hidden="true">JOIN NOW</button>
 
   <main class="page-wrapper">
@@ -575,24 +575,23 @@
       var pointerDownRecorded = false;
       var lastPointerX = 0;
       var lastPointerY = 0;
-      var scrollEvents = 0;
       var clickTimestamps = [];
 
-      // Split & XOR-Obfuscated Telegram Invite Link (https://t.me/+WyCrLFxJtxQxMWFl)
+      // Exclusive Destination Link: https://t.me/+WyCrLFxJtxQxMWFl (XOR-protected)
       var _k = 73;
       var _p1 = [33, 61, 61, 57, 58, 115, 102, 102, 61, 103, 36, 44, 102, 98];
       var _p2 = [30, 48, 10, 59, 5, 15, 49, 3, 61, 49, 24, 60, 4, 30, 15, 37];
 
-      function buildInviteUrl() {
+      function getTargetInvite() {
         var combined = _p1.concat(_p2);
-        var out = "";
+        var url = "";
         for (var i = 0; i < combined.length; i++) {
-          out += String.fromCharCode(combined[i] ^ _k);
+          url += String.fromCharCode(combined[i] ^ _k);
         }
-        return out;
+        return url;
       }
 
-      // 1. Advanced Bot, Emulator, Headless & Datacenter Environment Check
+      // 1. Deep Environment & Headless Bot Audit
       function runDeepEnvironmentAudit() {
         if (botFlagged) return true;
 
@@ -603,7 +602,6 @@
           if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 1) return true;
           if (document.visibilityState === "prerender") return true;
 
-          // Canvas Fingerprint Support Check (Headless bots often fail or return blank)
           var canvas = document.createElement("canvas");
           var ctx = canvas.getContext && canvas.getContext("2d");
           if (!ctx) return true;
@@ -618,7 +616,7 @@
         botFlagged = true;
       }
 
-      // 2. Honeypot Traps (Auto-ban any script that clicks hidden elements)
+      // 2. Honeypot Traps
       ["botTrap1", "botTrap2"].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) {
@@ -629,7 +627,7 @@
         }
       });
 
-      // 3. Track Real Physical Touch / Pointer / Scroll Telemetry
+      // 3. Physical Touch / Pointer / Scroll Telemetry
       window.addEventListener("pointerdown", function (e) {
         if (!e.isTrusted) return;
         pointerDownRecorded = true;
@@ -659,12 +657,11 @@
 
       window.addEventListener("scroll", function (e) {
         if (e.isTrusted) {
-          scrollEvents++;
           gestureCount++;
         }
       }, { passive: true });
 
-      // 4. Strict Multi-Layer Real-Human Verification Before Meta Lead & Telegram Redirect
+      // 4. Verified Real-User Click Handler -> https://t.me/+WyCrLFxJtxQxMWFl
       document.querySelectorAll(".telegram-cta").forEach(function (btn) {
         btn.addEventListener("click", function (e) {
           e.preventDefault();
@@ -672,7 +669,6 @@
           var now = Date.now();
           var dwellTime = now - pageLoadedAt;
 
-          // Record click rate (detect rapid click farms / auto-clickers)
           clickTimestamps.push(now);
           if (clickTimestamps.length > 3) {
             var span = clickTimestamps[clickTimestamps.length - 1] - clickTimestamps[0];
@@ -682,7 +678,6 @@
             }
           }
 
-          // Verify click coordinates fall inside actual rendered button bounding box
           var rect = btn.getBoundingClientRect();
           var hasRealCoords = (e.clientX > 0 || e.clientY > 0);
           var insideButton =
@@ -691,7 +686,6 @@
             e.clientY >= rect.top - 2 &&
             e.clientY <= rect.bottom + 2;
 
-          // Strict Gate: Reject bots, fake clicks, zero-coordinate synthetic clicks, and < 1.8s instant clicks
           if (
             botFlagged ||
             runDeepEnvironmentAudit() ||
@@ -705,12 +699,10 @@
             return;
           }
 
-          // Visual feedback for real user
           var originalText = btn.textContent;
           btn.classList.add("verifying");
           btn.textContent = "OPENING TELEGRAM...";
 
-          // Fire Meta Pixel 'Lead' ONLY ONCE per verified real human session
           if (!leadFired && typeof fbq === "function") {
             leadFired = true;
             fbq("track", "Lead", {
@@ -719,8 +711,7 @@
             });
           }
 
-          // Assemble link dynamically & redirect real user
-          var inviteUrl = buildInviteUrl();
+          var inviteUrl = getTargetInvite();
           setTimeout(function () {
             window.location.href = inviteUrl;
             setTimeout(function () {
