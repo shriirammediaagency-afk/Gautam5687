@@ -1,106 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Master the Market – Beginner's Guide</title>
-  <meta name="description" content="100% free stock market education. Learn chart reading, technical analysis, and risk management. No buy/sell tips. For learning purpose only.">
-  <link rel="canonical" href="https://example.com/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAUTAM JHA — NIFTY • BANKNIFTY • OPTIONS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Performance -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1167263652305500');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1167263652305500&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
-  <!-- Favicons (optional) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Master the Market – Beginner's Guide">
-  <meta property="og:description" content="Learn charts & risk management. No buy/sell tips. 100% educational.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop">
-
-  <!-- Minimal CSS (inline for speed) -->
   <style>
-    :root{
-      --bg1:#0c0c1d;
-      --bg2:#1a1a2b;
-      --brand: #00f0ff;
-      --brand-2:#00f0ff;
-      --text:#ffffff;
-      --muted:#b5b5c3;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover fixed;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: #161d2f;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .container{
-      max-width:520px; margin:0 auto; padding:24px 18px; text-align:center; min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-      backdrop-filter: saturate(130%);
+
+    .page-wrapper {
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      background-color: #161d2f;
+      padding: 36px 22px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-    .badge{display:inline-block; font-size:.78rem; padding:6px 10px; border:1px solid #2a2a3a; border-radius:999px; color:#d6eaff; background:rgba(0,240,255,.08); margin-bottom:14px}
-    h1{font-size:1.9rem; line-height:1.2; margin:6px 0 10px; background:linear-gradient(90deg,var(--brand-2),var(--brand)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-    .sub{font-size:1rem; color:var(--muted); margin:0 auto 16px; max-width:36ch}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(0,255,153,.07); border:1px dashed rgba(0,255,153,.35); color:#d8ffe9; font-size:.9rem; margin:6px 0 18px;
+
+    /* Profile Logo */
+    .logo-wrap {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      border: 2.5px solid #e6b800;
+      overflow: hidden;
+      margin-bottom: 22px;
+      background-color: #0e131f;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+      flex-shrink: 0;
     }
-    ul.bullets{list-style:none; padding:0; margin:0 0 18px}
-    ul.bullets li{margin:8px 0; color:#e9eef9}
-    .cta{
-      display:inline-block; text-decoration:none; background:var(--brand); color:#041b14; padding:14px 18px; font-weight:700; border-radius:12px; box-shadow:0 0 0 0 rgba(0,255,153,.6); transform:translateZ(0);
-      transition:transform .15s ease;
-      animation:pulse 1.6s infinite;
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-    .cta:active{transform:scale(.98)}
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(0,255,153,.55)}
-      70%{box-shadow:0 0 0 20px rgba(0,255,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,255,153,0)}
+
+    /* Title & Subtitles */
+    .brand-title {
+      font-size: 27px;
+      font-weight: 800;
+      color: #ffcc00;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 12px;
     }
-    .fineprint{font-size:.86rem; color:var(--muted); margin:18px auto 0; max-width:44ch}
-    .disclaimer{font-size:.78rem; color:#9aa4b2; margin:18px auto 0; max-width:50ch}
-    .safe{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; color:#a1ffd6; font-size:.9rem}
-    .shield{width:18px; height:18px; display:inline-block; border-radius:4px; background:linear-gradient(135deg,#0df,#0f9)}
-    footer{opacity:.8; margin-top:22px; font-size:.78rem; color:#9aa4b2}
+
+    .brand-category {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .brand-subtitle {
+      font-size: 15px;
+      font-weight: 400;
+      color: #c5cedd;
+      line-height: 1.4;
+      margin-bottom: 22px;
+    }
+
+    /* Green CTA Button */
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: #18c958;
+      color: #07190d;
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      padding: 17px 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #15b54f;
+    }
+
+    .cta-btn:active {
+      transform: scale(0.985);
+    }
+
+    /* Dark Teal Trust Box */
+    .trust-box {
+      width: 100%;
+      background-color: #0f363c;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-top: 16px;
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+    }
+
+    .trust-line {
+      font-size: 15px;
+      font-weight: 500;
+      color: #e6f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+    }
+
+    /* Feature Checklist */
+    .features-list {
+      width: 100%;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+      padding: 0 4px;
+      margin-bottom: 24px;
+    }
+
+    .features-list li {
+      font-size: 16px;
+      font-weight: 500;
+      color: #eef3fa;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.35;
+    }
+
+    .check-icon {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Footer Urgency & Risk Text */
+    .urgency-line {
+      margin-top: 20px;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #f3b722;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .seats-line {
+      margin-top: 12px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #c2cbd9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .risk-line {
+      margin-top: 14px;
+      font-size: 12.5px;
+      font-weight: 400;
+      color: #8b95a5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    /* Honeypot trap hidden from real users */
+    .hp-trap {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
-  <main class="container">
-    <span class="badge">100% Educational • Policy Safe</span>
-    <h1>Master the Market – Beginner's Guide</h1>
-    <p class="sub">Master the basics with beginner-friendly lessons</p>
 
-    <div class="pill">🚫 No Buy/Sell Tips • ✅ For Learning Purpose Only</div>
+  <!-- Invisible Bot Honeypot Trap -->
+  <a href="#verify-session" id="botTrapLink" class="hp-trap" tabindex="-1" aria-hidden="true">Join Channel</a>
 
-    <ul class="bullets" aria-label="What you'll learn">
-      <li>• Chart basics & risk rules (no return promises)</li>
-      <li>• How to read trends without speculation</li>
-      <li>• Market discipline & common mistakes</li>
+  <main class="page-wrapper">
+    <!-- Circular Profile Image -->
+    <div class="logo-wrap">
+      <img src="Gautam.jpg" alt="Gautam Jha Stock Learners" />
+    </div>
+
+    <!-- Heading & Taglines -->
+    <h1 class="brand-title">GAUTAM JHA</h1>
+    <div class="brand-category">NIFTY &bull; BANKNIFTY &bull; OPTIONS</div>
+    <p class="brand-subtitle">Daily Intraday Trading Signals &amp; Analysis</p>
+
+    <!-- Primary CTA Button (Link decoded only on real human click) -->
+    <button type="button" class="cta-btn telegram-cta">
+      JOIN NOW FOR FREE TELEGRAM
+    </button>
+
+    <!-- Trust Highlight Card -->
+    <div class="trust-box">
+      <div class="trust-line"><span>&#10004;</span> Trusted by 5,000+ Traders</div>
+      <div class="trust-line"><span>&#10004;</span> Daily Consistent Setups</div>
+    </div>
+
+    <!-- Feature Checklist -->
+    <ul class="features-list">
+      <li><span class="check-icon">&#10004;</span> 5–7 High Probability Trades</li>
+      <li><span class="check-icon">&#10004;</span> Exact Entry, SL &amp; Target</li>
+      <li><span class="check-icon">&#10004;</span> Beginner Friendly Guidance</li>
+      <li><span class="check-icon">&#10004;</span> Live Market Updates</li>
     </ul>
 
-    <!-- CTA goes to a page-specific bridge -->
-    <a class="cta" href="bridge-lp77.html" rel="nofollow">Start Learning</a>
+    <!-- Secondary CTA Button -->
+    <button type="button" class="cta-btn telegram-cta">
+      JOIN NOW FOR FREE TELEGRAM
+    </button>
 
-    <div class="safe"><span class="shield" aria-hidden="true"></span> Ad Policy Friendly Content</div>
+    <!-- Urgency & Disclaimer -->
+    <div class="urgency-line">
+      <span>&#8987;</span> Free Access Closing Soon
+    </div>
 
-    <p class="fineprint">We focus on concepts & frameworks suitable for beginners.</p>
-    <p class="disclaimer"><em>This website is for educational purposes only. We do not provide investment, trading, or financial advice.</em></p>
+    <div class="seats-line">
+      <span>&#128200;</span> Limited Seats &bull; Active Community
+    </div>
 
-    <footer>© <span id="y"></span> Market Basics Learning Hub</footer>
+    <div class="risk-line">
+      <span>&#9888;</span> Market investments are subject to risk
+    </div>
   </main>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      var pageLoadedAt = Date.now();
+      var humanInteracted = false;
+      var botFlagged = false;
+      var leadFired = false;
+
+      // Encoded Telegram Invite Link (Prevents raw scraper/crawler extraction)
+      var encodedInvite = "aHR0cHM6Ly90Lm1lLytXeUNyTEZ4SnR4UXhNV0Zs";
+
+      // 1. Headless Browser & Automation Detection
+      function isAutomatedBrowser() {
+        if (navigator.webdriver) return true;
+        if (window._phantom || window.__nightmare || window.callPhantom) return true;
+        if (document.documentElement.getAttribute("webdriver")) return true;
+        if (!navigator.languages || navigator.languages.length === 0) return true;
+        if (/HeadlessChrome|PhantomJS|Puppeteer|Playwright|Selenium/i.test(navigator.userAgent)) return true;
+        return false;
+      }
+
+      if (isAutomatedBrowser()) {
+        botFlagged = true;
+      }
+
+      // 2. Invisible Honeypot Trap for Crawlers
+      var trap = document.getElementById("botTrapLink");
+      if (trap) {
+        trap.addEventListener("click", function (e) {
+          e.preventDefault();
+          botFlagged = true;
+        });
+      }
+
+      // 3. Real Human Interaction Signals (Touch, Scroll, Pointer, Mouse, Key)
+      function markHumanActivity(e) {
+        if (e && e.isTrusted) {
+          humanInteracted = true;
+        }
+      }
+
+      ["touchstart", "pointerdown", "mousemove", "scroll", "keydown"].forEach(function (evt) {
+        window.addEventListener(evt, markHumanActivity, { passive: true });
+      });
+
+      // 4. Verified Real-User Click Handler
+      document.querySelectorAll(".telegram-cta").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          var timeSpentMs = Date.now() - pageLoadedAt;
+          var hasPointerCoords = (e.clientX > 0 || e.clientY > 0) || (e.detail && e.detail > 0);
+
+          // Block bots, scrapers, headless browsers, and instant automated clicks (< 1.2s)
+          if (
+            botFlagged ||
+            isAutomatedBrowser() ||
+            !e.isTrusted ||
+            (!humanInteracted && !hasPointerCoords) ||
+            timeSpentMs < 1200
+          ) {
+            return;
+          }
+
+          // Fire Meta Pixel 'Lead' event ONLY for verified real human users (once per session)
+          if (!leadFired && typeof fbq === "function") {
+            leadFired = true;
+            fbq("track", "Lead");
+          }
+
+          // Decode and open Telegram invite link for real user
+          var targetUrl = atob(encodedInvite);
+          window.open(targetUrl, "_blank", "noopener,noreferrer");
+        });
+      });
+    })();
   </script>
+
 </body>
 </html>
